@@ -1,0 +1,536 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    font-family: 'Poppins', sans-serif;
+    padding: 40px 20px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+}
+
+/* App Heading and Subtitle */
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.app-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.date h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #333;
+}
+
+.date p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.search-input {
+    padding: 12px 20px 12px 40px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.location {
+    text-align: right;
+}
+
+.location h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #333;
+}
+
+.location p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling (Glassmorphism) */
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Today Overview */
+.overview h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.overview-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.overview-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+}
+
+.overview-item:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.overview-item .icon {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.overview-item p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.overview-item h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.overview-item .change {
+    font-size: 0.8em;
+    color: #ff4444;
+}
+
+.temp {
+    text-align: center;
+}
+
+.temp h2 {
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.temp p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.fav-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.fav-button:hover {
+    background: #0056b3;
+}
+
+/* Details */
+.details h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.details-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.details-item {
+    flex: 1;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    min-width: 120px;
+}
+
+.details-item:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.details-item .icon {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.details-item p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.details-item h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.details-item .change {
+    font-size: 0.8em;
+    color: #ff4444;
+}
+
+/* Chance of Rain */
+.rain-chance h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.rain-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.rain-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    min-width: 120px;
+}
+
+.rain-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3), 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.rain-time {
+    margin-bottom: 10px;
+}
+
+.rain-time p {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #333;
+}
+
+.rain-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    stroke: #e0e0e0;
+}
+
+.progress-ring-fill {
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.rain-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Next 5 Days Weather Conditions */
+.forecast h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.forecast-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.forecast-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    width: 140px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, #007bff, #00ddeb) 1;
+}
+
+.forecast-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+.forecast-date p {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.forecast-icon span {
+    font-size: 2em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.forecast-details .temp {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0;
+}
+
+.forecast-details .description {
+    font-size: 0.85em;
+    color: #666;
+    text-transform: capitalize;
+}
+
+/* Sunrise & Sunset */
+.sunrise-sunset h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.sunrise-sunset p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.sun-times {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.sun-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    transition: background 0.3s ease;
+}
+
+.sun-item:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.sun-item .icon {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.sun-item p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.sun-item h4 {
+    font-size: 1.3em;
+    color: #333;
+}
+
+/* Favorites */
+.favorites {
+    grid-column: span 2;
+}
+
+.toggle-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+.favorites ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.favorites li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.favorites li:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.favorites span {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.favorites span:hover {
+    text-decoration: underline;
+}
+
+.favorites button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.favorites button:hover {
+    background: #cc0000;
+}
+
+/* Error Message */
+.error {
+    color: #ff4444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .location {
+        text-align: left;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .favorites {
+        grid-column: span 1;
+    }
+
+    .forecast-item {
+        width: 100%;
+    }
+
+    .rain-item {
+        width: 100%;
+    }
+}
